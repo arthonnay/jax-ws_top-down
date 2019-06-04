@@ -7,7 +7,7 @@
         name="AgeServiceTopDown">
     <types>
         <xs:schema
-                xmlns:xs="http://www.w3.org/2001/XMLSchema"  targetNamespace="http://age.com/">
+                xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://age.com/">
             <xs:element name="getAge" type="tns:getAge"/>
             <xs:element name="getAgeResponse" type="tns:getAgeResponse"/>
             <xs:complexType name="getAge">
