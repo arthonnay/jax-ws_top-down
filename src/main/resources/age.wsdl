@@ -1,11 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
 <definitions
         xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
         targetNamespace="http://age.com/"
         xmlns:tns="http://age.com/"
         xmlns="http://schemas.xmlsoap.org/wsdl/"
-        name="Age">
+        name="AgeServiceTopDown">
     <types>
-        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"  targetNamespace="http://age.com/">
+        <xs:schema
+                xmlns:xs="http://www.w3.org/2001/XMLSchema"  targetNamespace="http://age.com/">
             <xs:element name="getAge" type="tns:getAge"/>
             <xs:element name="getAgeResponse" type="tns:getAgeResponse"/>
             <xs:complexType name="getAge">
@@ -26,13 +28,13 @@
     <message name="getAgeResponse">
         <part name="parameters" element="tns:getAgeResponse"/>
     </message>
-    <portType name="AgeService">
+    <portType name="AgeServiceTopDown">
         <operation name="getAge">
             <input message="tns:getAge"/>
             <output message="tns:getAgeResponse"/>
         </operation>
     </portType>
-    <binding name="AgeServicePortBinding" type="tns:AgeService">
+    <binding name="AgeServicePortBinding" type="tns:AgeServiceTopDown">
         <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
         <operation name="getAge">
             <input>
@@ -43,7 +45,7 @@
             </output>
         </operation>
     </binding>
-    <service name="Age">
+    <service name="AgeServiceTopDown">
         <port name="AgeServicePort" binding="tns:AgeServicePortBinding">
             <soap:address location="http://localhost:8080/Age"/>
         </port>
